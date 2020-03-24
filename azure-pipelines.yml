@@ -27,14 +27,14 @@ jobs:
       - script: npm install
         displayName: 'INSTALL: launch npm install'
       - script: |
-          chmod +x mvnw
-          ./mvnw clean verify
+          chmod +x mvn
+          mvn clean verify
         displayName: 'TESTS: backend'
-      - script: ./mvnw com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test'
+      - script: mvn com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test'
         displayName: 'TESTS: frontend'
-      - script: ./mvnw verify -Pprod -DskipTests
+      - script: mvn verify -Pprod -DskipTests
         displayName: 'TESTS: packaging'
-      - script: ./mvnw package -Pprod -DskipTests
+      - script: mvn package -Pprod -DskipTests
         displayName: 'BUILD: creating production build'
       - task: CopyFiles@2
         inputs:
