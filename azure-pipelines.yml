@@ -49,7 +49,7 @@ jobs:
         inputs:
           azureSubscription: 'Kostenlose Testversion'
           appType: webApp
-          WebAppName: 'lakeside-auto-deploy-app'
+          WebAppName: 'lakeside-auto'
           packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
           WebConfigParameters: '-JAR_PATH D:\home\site\wwwroot\*.jar -ADDITIONAL_DEPLOYMENT_OPTIONS ''-Dserver.port=80'' -appType Java_SpringBoot'
         enabled: false
