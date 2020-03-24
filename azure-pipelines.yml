@@ -43,3 +43,13 @@ jobs:
         inputs:
           pathtoPublish: '$(Build.ArtifactStagingDirectory)'
           artifactName: lakeside
+          steps:
+      - task: AzureRmWebAppDeployment@4
+        displayName: 'Deploy Jar to Azure App Service'
+        inputs:
+          azureSubscription: 'Kostenlose Testversion'
+          appType: webApp
+          WebAppName: 'lakeside-auto-deploy-app'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
+          WebConfigParameters: '-JAR_PATH D:\home\site\wwwroot\*.jar -ADDITIONAL_DEPLOYMENT_OPTIONS ''-Dserver.port=80'' -appType Java_SpringBoot'
+        enabled: false
