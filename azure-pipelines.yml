@@ -12,10 +12,10 @@ variables:
   azureSubscription: 'bc9d3bd1-6dcc-488f-82ff-dc32110b672d'
   
   # Web app name
-  webAppName: 'lakeside-auto'
+  webAppName: 'lakeside-core'
 
   # Environment name
-  environmentName: 'lakeside-auto'
+  environmentName: 'lakeside-core'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -60,7 +60,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: lakeside-auto'
+            displayName: 'Azure Web App Deploy: lakeside-core'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
